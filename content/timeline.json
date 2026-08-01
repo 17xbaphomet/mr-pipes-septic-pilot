@@ -1,16 +1,21 @@
 {
   "project": "mr-pipes-septic-pilot",
-  "title": "Most People Only Learn How Their Septic System Works… When It Stops Working",
-  "target_runtime_s": 855,
-  "target_runtime_range_s": [840, 870],
+  "title": "Most Folks Only Figure Out How Their Septic System Works… Once It Stops Working",
+  "target_runtime_s": 930,
+  "target_runtime_range_s": [870, 930],
   "fps": 24,
-  "style": {"story": "clean_2d_cartoon", "education": "simple_technical_animation"},
+  "style": {
+    "story": "clean_2d_cartoon",
+    "education": "simple_technical_animation",
+    "palette": "warm_suburban_day_cool_night",
+    "market": "southwest_us"
+  },
   "characters": [
     {"id": "mr_pipes", "role": "host", "display_name": "Mr. Pipes"},
-    {"id": "dad", "role": "family", "display_name": "Dad"},
+    {"id": "dad", "role": "family", "display_name": "Homeowner"},
     {"id": "mom", "role": "family", "display_name": "Mom"},
-    {"id": "teen", "role": "family", "display_name": "Teen"},
-    {"id": "mid_child", "role": "family", "display_name": "Middle Child"},
+    {"id": "teen", "role": "family", "display_name": "Teenage Daughter"},
+    {"id": "mid_child", "role": "family", "display_name": "Middle Kid"},
     {"id": "baby", "role": "family", "display_name": "Baby"}
   ],
   "sets": [
@@ -19,6 +24,7 @@
     {"id": "workshop", "kind": "interior"},
     {"id": "kitchen", "kind": "interior"},
     {"id": "bathroom", "kind": "interior"},
+    {"id": "hallway", "kind": "interior"},
     {"id": "garage_new", "kind": "exterior"},
     {"id": "yard_drainfield", "kind": "exterior"},
     {"id": "diagram_tank", "kind": "diagram"},
@@ -26,19 +32,310 @@
     {"id": "diagram_healthy_system", "kind": "diagram"}
   ],
   "segments": [
-    {"id": "cold_open", "type": "story", "start_s": 0, "end_s": 40, "title": "Cold Open", "set": "house_exterior_night", "audio": {"vo": {"speaker": "mr_pipes", "text": "Most people only learn how their septic system really works… when it stops working."}}, "assets": ["glow_grass_rect"], "transition_out": {"type": "cut_to_black", "duration_s": 0.8}},
-    {"id": "introduction", "type": "host", "start_s": 40, "end_s": 95, "title": "Introduction", "set": "workshop", "audio": {"dialogue": [{"speaker": "mr_pipes", "text": "I'm Mr. Pipes. I install and maintain septic systems around here. Today I want to show you a story I see more often than you'd think.", "to_camera": true}]}, "assets": ["mr_pipes"], "transition_out": {"type": "soft_wipe", "duration_s": 0.6}},
-    {"id": "scene_1_welcome", "type": "story", "start_s": 95, "end_s": 170, "title": "Scene 1 – Welcome", "set": "house_exterior_day", "audio": {"dialogue": [{"speaker": "dad", "text": "We finally finished the garage."}]}, "assets": ["dad"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "edu_1_garbage_disposal", "type": "education", "start_s": 170, "end_s": 230, "title": "Education – Garbage Disposal", "set": "diagram_tank", "audio": {"vo": {"speaker": "mr_pipes", "text": "A septic tank is designed to separate solids. Food waste overloads the sludge layer."}}, "assets": ["mr_pipes", "diagram_tank"], "edu_topics": ["garbage_disposal"], "transition_out": {"type": "quick_cutaway", "duration_s": 0.4}},
-    {"id": "scene_2_kitchen", "type": "story", "start_s": 230, "end_s": 300, "title": "Scene 2 – Kitchen", "set": "kitchen", "audio": {"dialogue": [{"speaker": "mom", "text": "Just scrape it in — the disposal will handle it."}]}, "assets": ["mom"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "edu_2_what_goes_down", "type": "education", "start_s": 300, "end_s": 360, "title": "Education – What Goes Down", "set": "diagram_tank", "audio": {"vo": {"speaker": "mr_pipes", "text": "Grease, wipes, chemicals, and food solids all belong somewhere else."}}, "assets": ["mr_pipes"], "edu_topics": ["grease", "wipes"], "transition_out": {"type": "soft_wipe", "duration_s": 0.5}},
-    {"id": "scene_3_bathroom", "type": "story", "start_s": 360, "end_s": 420, "title": "Scene 3 – Bathroom", "set": "bathroom", "audio": {"dialogue": [{"speaker": "teen", "text": "They're flushable — it says so on the package."}]}, "assets": ["teen"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "edu_3_flushable", "type": "education", "start_s": 420, "end_s": 480, "title": "Education – Flushable Myths", "set": "diagram_tank", "audio": {"vo": {"speaker": "mr_pipes", "text": "Flushable does not mean septic-safe."}}, "assets": ["mr_pipes"], "edu_topics": ["flushable_wipes"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "scene_4_garage", "type": "story", "start_s": 480, "end_s": 550, "title": "Scene 4 – Garage", "set": "garage_new", "audio": {"dialogue": [{"speaker": "dad", "text": "We put the garage right where the old field was."}]}, "assets": ["dad"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "edu_4_drainfield", "type": "education", "start_s": 550, "end_s": 620, "title": "Education – Drainfield", "set": "diagram_drainfield", "audio": {"vo": {"speaker": "mr_pipes", "text": "The drainfield needs open soil. Building on it kills the oxygen the bacteria need."}}, "assets": ["mr_pipes"], "edu_topics": ["drainfield_protection"], "transition_out": {"type": "soft_wipe", "duration_s": 0.5}},
-    {"id": "scene_5_shop", "type": "story", "start_s": 620, "end_s": 680, "title": "Scene 5 – Shop", "set": "workshop", "audio": {"dialogue": [{"speaker": "dad", "text": "The grass is bright green in a perfect rectangle."}, {"speaker": "mr_pipes", "text": "That's the drainfield talking."}]}, "assets": ["mr_pipes", "dad"], "transition_out": {"type": "cut", "duration_s": 0.3}},
-    {"id": "reveal", "type": "story", "start_s": 680, "end_s": 740, "title": "Reveal", "set": "yard_drainfield", "audio": {"vo": {"speaker": "mr_pipes", "text": "That's not fertilizer."}}, "assets": ["glow_grass_rect"], "transition_out": {"type": "freeze_soft_wipe", "duration_s": 0.8}},
-    {"id": "positive_section", "type": "education", "start_s": 740, "end_s": 800, "title": "Healthy Approach", "set": "diagram_healthy_system", "audio": {"vo": {"speaker": "mr_pipes", "text": "Know where your tank and drainfield are. Pump on a schedule. Keep the surface clear. Be careful what goes down the drains. Call a professional when something feels off."}}, "assets": ["mr_pipes"], "checklist": [{"at_s": 745, "item": "Know tank and drainfield location"}, {"at_s": 755, "item": "Pump on a regular schedule"}, {"at_s": 765, "item": "Keep drainfield surface clear"}, {"at_s": 775, "item": "Watch what goes down the drains"}, {"at_s": 785, "item": "Call a pro when something feels off"}], "edu_topics": ["maintenance"], "transition_out": {"type": "soft_wipe", "duration_s": 0.5}},
-    {"id": "closing", "type": "host", "start_s": 800, "end_s": 855, "title": "Closing", "set": "workshop", "audio": {"dialogue": [{"speaker": "mr_pipes", "text": "If you're not sure where your system is, or if the grass is looking a little too healthy in one spot, it's worth a conversation. I'm local. Happy to help.", "to_camera": true}]}, "assets": ["mr_pipes"], "transition_out": {"type": "fade_to_black", "duration_s": 1.0}}
+    {
+      "id": "cold_open",
+      "type": "story",
+      "start_s": 0,
+      "end_s": 45,
+      "title": "Cold Open (Hook)",
+      "set": "house_exterior_night",
+      "imagery": ["Late evening colonial house", "Grass glowing bright green rectangular", "Family and Mr. Pipes silhouettes"],
+      "audio": {
+        "ambience": ["quiet_wind", "distant_crickets"],
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "Most folks only figure out how their septic system really works… once it stops working.",
+          "style": "soft"
+        }
+      },
+      "assets": ["glow_grass_rect", "mr_pipes"],
+      "transition_out": {"type": "cut_to_black", "duration_s": 1.0}
+    },
+    {
+      "id": "introduction",
+      "type": "host",
+      "start_s": 45,
+      "end_s": 110,
+      "title": "Introduction",
+      "set": "workshop",
+      "imagery": ["Mr. Pipes in workshop", "Friendly to camera"],
+      "audio": {
+        "dialogue": [{
+          "speaker": "mr_pipes",
+          "text": "Hey there, I'm Mr. Pipes. I install and service septic systems and heating around this part of the country. Today I want to tell you a story I run into more often than you'd think. A good family who tried to do everything right… and still managed to get almost everything wrong without even realizing it. We're gonna walk through what happened, and I'll explain along the way why each little decision mattered.",
+          "to_camera": true
+        }]
+      },
+      "assets": ["mr_pipes"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.6}
+    },
+    {
+      "id": "scene_1_welcome",
+      "type": "story",
+      "start_s": 110,
+      "end_s": 200,
+      "title": "Scene 1 – The Welcome",
+      "set": "house_exterior_day",
+      "imagery": ["Sunny colonial house", "Homeowner in cowboy hat"],
+      "audio": {
+        "dialogue": [
+          {"speaker": "mr_pipes", "text": "Afternoon! Name's Pipes. The county's running sewer lines out this way. Just wanted to see if y'all were interested in a quote to hook up."},
+          {"speaker": "dad", "text": "Appreciate the offer, but this place has been handling things the old-fashioned way for a hundred years. All natural. Self-contained. No monthly bills, no city nonsense. Already saved us a few thousand bucks right there."},
+          {"speaker": "mr_pipes", "text": "Fair enough. You know where to find me if anything ever comes up."}
+        ]
+      },
+      "assets": ["mr_pipes", "dad", "mom"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "scene_2_dinner",
+      "type": "story",
+      "start_s": 200,
+      "end_s": 230,
+      "title": "Scene 2 – Dinner & the Disposal",
+      "set": "kitchen",
+      "imagery": ["Family at table", "Mom hits disposal"],
+      "audio": {"dialogue": []},
+      "assets": ["mom", "teen"],
+      "transition_out": {"type": "freeze_soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "edu_1_garbage_disposal",
+      "type": "education",
+      "start_s": 230,
+      "end_s": 290,
+      "title": "Education 1 – Garbage Disposals",
+      "set": "diagram_tank",
+      "imagery": ["Tank cross-section", "Food scraps into sludge"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "A garbage disposal feels handy, but every time you grind up food scraps, you're sending solid material straight into the septic tank. That tank is built to let solids settle out. Food waste piles a lot more sludge in there than the system was designed for. Over time that sludge layer gets higher and higher. Once it reaches the outlet, it starts heading into the drainfield. And once solids get into the soil, they clog it for good. That's why most of us in the business say: use the disposal as little as possible… or better yet, not at all."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_tank"],
+      "edu_topics": ["garbage_disposal", "solids_load", "sludge_buildup", "drainfield_clog"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "scene_3_diaper",
+      "type": "story",
+      "start_s": 290,
+      "end_s": 330,
+      "title": "Scene 3 – The Diaper",
+      "set": "bathroom",
+      "imagery": ["Diaper in toilet", "CAUSTIC cleaner"],
+      "audio": {"dialogue": []},
+      "assets": ["mom", "baby"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "edu_2_diapers",
+      "type": "education",
+      "start_s": 330,
+      "end_s": 365,
+      "title": "Education 2 – Flushing Diapers",
+      "set": "diagram_tank",
+      "imagery": ["Diaper stuck near baffle"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "Only two things should ever go down a toilet on a septic system: human waste and toilet paper. Diapers, wipes, paper towels — even the ones that say 'flushable' — don't break down the way regular toilet paper does. They stay in one piece, catch on the baffles, and create blockages. What looks like it flushed is often still sitting in the tank or starting to slow everything down."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_tank"],
+      "edu_topics": ["flushable_items", "diapers_wipes", "baffle_blockage"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "edu_3_caustic",
+      "type": "education",
+      "start_s": 365,
+      "end_s": 400,
+      "title": "Education 3 – Harsh Chemicals",
+      "set": "diagram_tank",
+      "imagery": ["Bacteria fade after chemical"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "When the water starts draining slow, a lot of folks reach for a strong drain cleaner. Those products are made for regular house plumbing. In a septic tank they kill the good bacteria that break down the waste. A septic system is a living biological process. When you hit it with caustic chemicals, that process slows way down or stops."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_tank"],
+      "edu_topics": ["caustic_cleaners", "beneficial_bacteria", "biological_process"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "scene_4_morning",
+      "type": "story",
+      "start_s": 400,
+      "end_s": 470,
+      "title": "Scene 4 – Next Morning Problem",
+      "set": "hallway",
+      "imagery": ["Morning hallway", "Dad grabs keys"],
+      "audio": {
+        "dialogue": [
+          {"speaker": "mid_child", "text": "Mom, the toilet won't flush right."},
+          {"speaker": "mom", "text": "Just put a little more of that drain cleaner in it."},
+          {"speaker": "dad", "text": "No way. This is a living system. It needs the right bacteria, not more chemicals. I'm going to get some proper additives."}
+        ]
+      },
+      "assets": ["mid_child", "mom", "dad"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "scene_5_shop",
+      "type": "story",
+      "start_s": 470,
+      "end_s": 540,
+      "title": "Scene 5 – At Mr. Pipes' Shop",
+      "set": "workshop",
+      "imagery": ["Workshop", "Dad stressed"],
+      "audio": {
+        "dialogue": [
+          {"speaker": "dad", "text": "I need those septic additives. Something to get the digestion going again."},
+          {"speaker": "mr_pipes", "text": "Sure, I carry those. But before we go that route… mind if I take a quick look at the system first? Sometimes it's easier to see what's actually going on."},
+          {"speaker": "dad", "text": "Alright."}
+        ]
+      },
+      "assets": ["mr_pipes", "dad"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "scene_6_questions",
+      "type": "story",
+      "start_s": 540,
+      "end_s": 660,
+      "title": "Scene 6 – The Questions on the Property",
+      "set": "yard_drainfield",
+      "imagery": ["Yard walk", "Green grass by garage"],
+      "audio": {
+        "dialogue": [
+          {"speaker": "mr_pipes", "text": "When was the tank last pumped since y'all moved in?"},
+          {"speaker": "dad", "text": "Shouldn't have been that long ago…"},
+          {"speaker": "mr_pipes", "text": "Do you know exactly where the tank and the drainfield are located?"},
+          {"speaker": "dad", "text": "Somewhere back here…"},
+          {"speaker": "mr_pipes", "text": "Has anybody built or driven over the field area?"},
+          {"speaker": "dad", "text": "Look at the grass around the garage — real deep green. That means the system is feeding the lawn. It's healthy."}
+        ]
+      },
+      "assets": ["mr_pipes", "dad", "mom"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "edu_4_additives",
+      "type": "education",
+      "start_s": 660,
+      "end_s": 700,
+      "title": "Education 4 – The Additives Myth",
+      "set": "diagram_tank",
+      "imagery": ["Sludge filling tank"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "Additives can't remove the sludge that's already sitting in the tank. The only way to get that material out is to pump it. Relying on additives usually just puts off the day the tank finally overflows into the drainfield."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_tank"],
+      "edu_topics": ["additives_myth", "pumping"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "edu_5_drainfield_weight",
+      "type": "education",
+      "start_s": 700,
+      "end_s": 740,
+      "title": "Education 5 – Building or Driving on the Drainfield",
+      "set": "diagram_drainfield",
+      "imagery": ["Soil compacted under garage"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "Heavy weight — whether it's a building or vehicles — compacts the soil. Once that soil is packed down, water can't move through it the way it's supposed to. Pipes can get crushed too. And when the field fails, the building is sitting right on top of the problem."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_drainfield"],
+      "edu_topics": ["drainfield_protection", "compaction"],
+      "transition_out": {"type": "cut", "duration_s": 0.3}
+    },
+    {
+      "id": "edu_6_green_grass",
+      "type": "education",
+      "start_s": 740,
+      "end_s": 780,
+      "title": "Education 6 – The Green Grass Warning",
+      "set": "diagram_drainfield",
+      "imagery": ["Effluent rising, grass unnaturally green"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "Really lush, deep-green grass in one specific area isn't a sign the system is fertilizing the lawn. Most of the time it means effluent is rising up close to the surface instead of being properly absorbed and treated underground."
+        }
+      },
+      "assets": ["mr_pipes", "diagram_drainfield"],
+      "edu_topics": ["green_grass_warning", "effluent"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "reveal",
+      "type": "story",
+      "start_s": 780,
+      "end_s": 850,
+      "title": "Scene 7 – The Reveal",
+      "set": "yard_drainfield",
+      "imagery": ["Glowing rectangular grass", "Family realization"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "That's not fertilizer.",
+          "style": "soft"
+        }
+      },
+      "assets": ["glow_grass_rect", "mr_pipes", "dad", "mom"],
+      "transition_out": {"type": "freeze_soft_wipe", "duration_s": 0.8}
+    },
+    {
+      "id": "positive_section",
+      "type": "education",
+      "start_s": 850,
+      "end_s": 910,
+      "title": "Positive Section – Healthy Approach",
+      "set": "diagram_healthy_system",
+      "imagery": ["Checklist", "Healthy system"],
+      "audio": {
+        "vo": {
+          "speaker": "mr_pipes",
+          "text": "None of these problems happen overnight. They build up from a bunch of little everyday decisions that feel harmless at the time. Good news is, most of them are completely avoidable once you understand how the system actually works. Here's what a healthy approach looks like: Know exactly where your tank and drainfield are. Get the tank pumped on a regular schedule. Keep the surface of the drainfield clear and protected. Be careful what goes down the drains. Call a pro when something feels off. A septic system is tough and can last decades… if you treat it like the living system it is."
+        }
+      },
+      "assets": ["mr_pipes"],
+      "checklist": [
+        {"at_s": 865, "item": "Know exactly where your tank and drainfield are"},
+        {"at_s": 875, "item": "Get the tank pumped on a regular schedule"},
+        {"at_s": 885, "item": "Keep the surface of the drainfield clear and protected"},
+        {"at_s": 895, "item": "Be careful what goes down the drains"},
+        {"at_s": 900, "item": "Call a pro when something feels off"}
+      ],
+      "edu_topics": ["maintenance", "prevention", "healthy_system"],
+      "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
+    },
+    {
+      "id": "closing",
+      "type": "host",
+      "start_s": 910,
+      "end_s": 930,
+      "title": "Closing",
+      "set": "workshop",
+      "imagery": ["Mr. Pipes at truck", "Logo fade-in"],
+      "audio": {
+        "dialogue": [{
+          "speaker": "mr_pipes",
+          "text": "If you're not sure where your system is, or if the grass is looking a little too healthy in one spot — it's worth a conversation. I'm local. Happy to help.",
+          "to_camera": true
+        }]
+      },
+      "assets": ["mr_pipes"],
+      "transition_out": {"type": "fade_to_black", "duration_s": 1.2}
+    }
   ]
 }
