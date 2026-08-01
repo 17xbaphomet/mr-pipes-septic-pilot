@@ -39,7 +39,13 @@
       "end_s": 45,
       "title": "Cold Open (Hook)",
       "set": "house_exterior_night",
-      "imagery": ["Late evening colonial house", "Grass glowing bright green rectangular", "Family and Mr. Pipes silhouettes"],
+      "imagery": [
+        "Late evening. Colonial house near the woods. Soft moonlight.",
+        "Camera pulls back toward the new garage.",
+        "Grass around the garage glows unnatural bright green in a clean rectangular shape.",
+        "Family and Mr. Pipes stand in silence; only silhouettes visible.",
+        "Camera slowly pushes in on the glowing grass."
+      ],
       "audio": {
         "ambience": ["quiet_wind", "distant_crickets"],
         "vo": {
@@ -58,13 +64,30 @@
       "end_s": 110,
       "title": "Introduction",
       "set": "workshop",
-      "imagery": ["Mr. Pipes in workshop", "Friendly to camera"],
+      "imagery": [
+        "Mr. Pipes stands in his workshop. Clean, well-lit space.",
+        "Tools and spare parts on the wall behind him.",
+        "Friendly, easygoing expression straight at camera."
+      ],
       "audio": {
-        "dialogue": [{
-          "speaker": "mr_pipes",
-          "text": "Hey there, I'm Mr. Pipes. I install and service septic systems and heating around this part of the country. Today I want to tell you a story I run into more often than you'd think. A good family who tried to do everything right… and still managed to get almost everything wrong without even realizing it. We're gonna walk through what happened, and I'll explain along the way why each little decision mattered.",
-          "to_camera": true
-        }]
+        "ambience": ["soft_workshop"],
+        "dialogue": [
+          {
+            "speaker": "mr_pipes",
+            "text": "Hey there, I'm Mr. Pipes. I install and service septic systems and heating around this part of the country.",
+            "to_camera": true
+          },
+          {
+            "speaker": "mr_pipes",
+            "text": "Today I want to tell you a story I run into more often than you'd think. A good family who tried to do everything right… and still managed to get almost everything wrong without even realizing it.",
+            "to_camera": true
+          },
+          {
+            "speaker": "mr_pipes",
+            "text": "We're gonna walk through what happened, and I'll explain along the way why each little decision mattered.",
+            "to_camera": true
+          }
+        ]
       },
       "assets": ["mr_pipes"],
       "transition_out": {"type": "soft_wipe", "duration_s": 0.6}
@@ -76,12 +99,28 @@
       "end_s": 200,
       "title": "Scene 1 – The Welcome",
       "set": "house_exterior_day",
-      "imagery": ["Sunny colonial house", "Homeowner in cowboy hat"],
+      "imagery": [
+        "Bright sunny afternoon. Three-story colonial house near the trees.",
+        "Moving truck just pulling away.",
+        "Mr. Pipes walks up the gravel driveway with a clipboard.",
+        "Homeowner steps out — broad-shouldered, jeans, flannel shirt, cowboy hat.",
+        "Wife in practical dress and three kids stand behind him."
+      ],
       "audio": {
+        "ambience": ["birds_day"],
         "dialogue": [
-          {"speaker": "mr_pipes", "text": "Afternoon! Name's Pipes. The county's running sewer lines out this way. Just wanted to see if y'all were interested in a quote to hook up."},
-          {"speaker": "dad", "text": "Appreciate the offer, but this place has been handling things the old-fashioned way for a hundred years. All natural. Self-contained. No monthly bills, no city nonsense. Already saved us a few thousand bucks right there."},
-          {"speaker": "mr_pipes", "text": "Fair enough. You know where to find me if anything ever comes up."}
+          {
+            "speaker": "mr_pipes",
+            "text": "Afternoon! Name's Pipes. The county's running sewer lines out this way. Just wanted to see if y'all were interested in a quote to hook up."
+          },
+          {
+            "speaker": "dad",
+            "text": "Appreciate the offer, but this place has been handling things the old-fashioned way for a hundred years. All natural. Self-contained. No monthly bills, no city nonsense. Already saved us a few thousand bucks right there."
+          },
+          {
+            "speaker": "mr_pipes",
+            "text": "Fair enough. You know where to find me if anything ever comes up."
+          }
         ]
       },
       "assets": ["mr_pipes", "dad", "mom"],
@@ -94,8 +133,13 @@
       "end_s": 230,
       "title": "Scene 2 – Dinner & the Disposal",
       "set": "kitchen",
-      "imagery": ["Family at table", "Mom hits disposal"],
-      "audio": {"dialogue": []},
+      "imagery": [
+        "Warm kitchen light in the evening. Family around a big wooden table.",
+        "Teenage daughter pushes her plate away.",
+        "Mom scrapes leftovers straight into the sink and hits the garbage disposal.",
+        "Deep, strained grrrrnnnk from the pipes. Everybody freezes half a second, then life continues."
+      ],
+      "audio": {"ambience": ["kitchen_ambient"], "dialogue": []},
       "assets": ["mom", "teen"],
       "transition_out": {"type": "freeze_soft_wipe", "duration_s": 0.5}
     },
@@ -106,7 +150,11 @@
       "end_s": 290,
       "title": "Education 1 – Garbage Disposals",
       "set": "diagram_tank",
-      "imagery": ["Tank cross-section", "Food scraps into sludge"],
+      "imagery": [
+        "Clean animated cross-section of a septic tank.",
+        "Food scraps dropping into the tank and joining the sludge layer.",
+        "Arrow showing sludge moving toward the outlet."
+      ],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -124,8 +172,12 @@
       "end_s": 330,
       "title": "Scene 3 – The Diaper",
       "set": "bathroom",
-      "imagery": ["Diaper in toilet", "CAUSTIC cleaner"],
-      "audio": {"dialogue": []},
+      "imagery": [
+        "Bathroom. Mom finishes changing the baby, rolls up the dirty diaper, drops it in the toilet.",
+        "Water rises higher than normal and drains reluctantly.",
+        "Mom pours CAUSTIC drain cleaner. Blob… blob… gurgle. Water goes down."
+      ],
+      "audio": {"ambience": ["bathroom_ambient"], "dialogue": []},
       "assets": ["mom", "baby"],
       "transition_out": {"type": "cut", "duration_s": 0.3}
     },
@@ -136,7 +188,7 @@
       "end_s": 365,
       "title": "Education 2 – Flushing Diapers",
       "set": "diagram_tank",
-      "imagery": ["Diaper stuck near baffle"],
+      "imagery": ["Toilet → pipe → tank.", "The diaper stays whole and gets stuck near the outlet baffle."],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -154,7 +206,7 @@
       "end_s": 400,
       "title": "Education 3 – Harsh Chemicals",
       "set": "diagram_tank",
-      "imagery": ["Bacteria fade after chemical"],
+      "imagery": ["Bacteria symbols inside the tank fade after the chemical is poured in."],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -172,7 +224,7 @@
       "end_s": 470,
       "title": "Scene 4 – Next Morning Problem",
       "set": "hallway",
-      "imagery": ["Morning hallway", "Dad grabs keys"],
+      "imagery": ["Bright morning light. Hallway and living room.", "Middle kid comes out of the bathroom.", "Dad grabs the truck keys and heads out."],
       "audio": {
         "dialogue": [
           {"speaker": "mid_child", "text": "Mom, the toilet won't flush right."},
@@ -190,7 +242,7 @@
       "end_s": 540,
       "title": "Scene 5 – At Mr. Pipes' Shop",
       "set": "workshop",
-      "imagery": ["Workshop", "Dad stressed"],
+      "imagery": ["Clean, practical workshop.", "Dad walks in looking a little stressed.", "Mr. Pipes calmly wiping his hands."],
       "audio": {
         "dialogue": [
           {"speaker": "dad", "text": "I need those septic additives. Something to get the digestion going again."},
@@ -208,7 +260,7 @@
       "end_s": 660,
       "title": "Scene 6 – The Questions on the Property",
       "set": "yard_drainfield",
-      "imagery": ["Yard walk", "Green grass by garage"],
+      "imagery": ["Mr. Pipes walks the yard with the whole family.", "Dad gets more defensive.", "Dad points toward the new garage and the deep-green grass."],
       "audio": {
         "dialogue": [
           {"speaker": "mr_pipes", "text": "When was the tank last pumped since y'all moved in?"},
@@ -229,7 +281,7 @@
       "end_s": 700,
       "title": "Education 4 – The Additives Myth",
       "set": "diagram_tank",
-      "imagery": ["Sludge filling tank"],
+      "imagery": ["Sludge filling the tank higher and higher."],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -247,7 +299,7 @@
       "end_s": 740,
       "title": "Education 5 – Building or Driving on the Drainfield",
       "set": "diagram_drainfield",
-      "imagery": ["Soil compacted under garage"],
+      "imagery": ["Soil getting compacted under a garage foundation."],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -262,10 +314,10 @@
       "id": "edu_6_green_grass",
       "type": "education",
       "start_s": 740,
-      "end_s": 780,
+      "end_s": 750,
       "title": "Education 6 – The Green Grass Warning",
       "set": "diagram_drainfield",
-      "imagery": ["Effluent rising, grass unnaturally green"],
+      "imagery": ["Effluent rising toward the surface and turning the grass unnaturally green."],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -279,12 +331,18 @@
     {
       "id": "reveal",
       "type": "story",
-      "start_s": 780,
-      "end_s": 850,
+      "start_s": 750,
+      "end_s": 820,
       "title": "Scene 7 – The Reveal",
       "set": "yard_drainfield",
-      "imagery": ["Glowing rectangular grass", "Family realization"],
+      "imagery": [
+        "Evening light fading. Family and Mr. Pipes at the new garage.",
+        "Grass glowing unnatural bright green in a perfect rectangular shape matching a drainfield.",
+        "Long quiet moment. Camera slowly circles the glowing patch.",
+        "Family faces as it sinks in."
+      ],
       "audio": {
+        "ambience": ["quiet_evening"],
         "vo": {
           "speaker": "mr_pipes",
           "text": "That's not fertilizer.",
@@ -297,11 +355,15 @@
     {
       "id": "positive_section",
       "type": "education",
-      "start_s": 850,
-      "end_s": 910,
-      "title": "Positive Section – Healthy Approach",
+      "start_s": 820,
+      "end_s": 890,
+      "title": "Positive Section – What a Healthy Approach Looks Like",
       "set": "diagram_healthy_system",
-      "imagery": ["Checklist", "Healthy system"],
+      "imagery": [
+        "Mr. Pipes back on camera.",
+        "Clean checklist appears one item at a time.",
+        "Simple, positive animations of a healthy system."
+      ],
       "audio": {
         "vo": {
           "speaker": "mr_pipes",
@@ -310,11 +372,11 @@
       },
       "assets": ["mr_pipes"],
       "checklist": [
-        {"at_s": 865, "item": "Know exactly where your tank and drainfield are"},
-        {"at_s": 875, "item": "Get the tank pumped on a regular schedule"},
-        {"at_s": 885, "item": "Keep the surface of the drainfield clear and protected"},
-        {"at_s": 895, "item": "Be careful what goes down the drains"},
-        {"at_s": 900, "item": "Call a pro when something feels off"}
+        {"at_s": 840, "item": "Know exactly where your tank and drainfield are"},
+        {"at_s": 850, "item": "Get the tank pumped on a regular schedule"},
+        {"at_s": 860, "item": "Keep the surface of the drainfield clear and protected"},
+        {"at_s": 870, "item": "Be careful what goes down the drains"},
+        {"at_s": 880, "item": "Call a pro when something feels off"}
       ],
       "edu_topics": ["maintenance", "prevention", "healthy_system"],
       "transition_out": {"type": "soft_wipe", "duration_s": 0.5}
@@ -322,11 +384,15 @@
     {
       "id": "closing",
       "type": "host",
-      "start_s": 910,
+      "start_s": 890,
       "end_s": 930,
       "title": "Closing",
       "set": "workshop",
-      "imagery": ["Mr. Pipes at truck", "Logo fade-in"],
+      "imagery": [
+        "Mr. Pipes standing in front of his service truck or workshop. Warm light.",
+        "Company logo fades in softly.",
+        "End card with logo, simple contact line, and a soft subscribe prompt."
+      ],
       "audio": {
         "dialogue": [{
           "speaker": "mr_pipes",
