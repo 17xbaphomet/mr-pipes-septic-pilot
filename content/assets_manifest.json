@@ -1,0 +1,40 @@
+{
+  "project": "mr-pipes-septic-pilot",
+  "version": 1,
+  "notes": "Priority: P0 = needed for first playable scene (intro + cold open + tank edu). P1 = full story. P2 = polish.",
+  "characters": [
+    {"id": "mr_pipes", "path": "assets/characters/mr_pipes.svg", "priority": "P0", "status": "skeleton", "rig_parts": ["body", "head", "mouth", "arm_l", "arm_r"], "variants": ["neutral", "talking", "pointing", "holding_clipboard"], "notes": "Host expert; friendly, calm, workwear + cap optional"},
+    {"id": "dad", "path": "assets/characters/dad.svg", "priority": "P0", "status": "skeleton", "rig_parts": ["body", "head", "mouth", "arm_l", "arm_r"], "variants": ["neutral", "confident", "frustrated", "defensive"], "notes": "Jeans, flannel, cowboy hat"},
+    {"id": "mom", "path": "assets/characters/mom.svg", "priority": "P1", "status": "planned", "rig_parts": ["body", "head", "mouth", "arm_l", "arm_r"], "variants": ["neutral", "kitchen", "bathroom"]},
+    {"id": "teen", "path": "assets/characters/teen.svg", "priority": "P1", "status": "planned", "rig_parts": ["body", "head"], "variants": ["neutral"]},
+    {"id": "mid_child", "path": "assets/characters/mid_child.svg", "priority": "P1", "status": "planned", "rig_parts": ["body", "head", "mouth"], "variants": ["neutral"]},
+    {"id": "baby", "path": "assets/characters/baby.svg", "priority": "P1", "status": "planned", "rig_parts": ["body", "head"], "variants": ["neutral"]}
+  ],
+  "sets": [
+    {"id": "house_exterior_day", "path": "assets/sets/house_exterior_day.svg", "priority": "P0", "status": "skeleton", "layers": ["sky", "woods", "house", "driveway", "porch", "garage_far"], "notes": "Three-story colonial near woods"},
+    {"id": "house_exterior_night", "path": "assets/sets/house_exterior_night.svg", "priority": "P0", "status": "planned"},
+    {"id": "workshop", "path": "assets/sets/workshop.svg", "priority": "P0", "status": "skeleton"},
+    {"id": "kitchen", "path": "assets/sets/kitchen.svg", "priority": "P1", "status": "planned"},
+    {"id": "bathroom", "path": "assets/sets/bathroom.svg", "priority": "P1", "status": "planned"},
+    {"id": "garage_new", "path": "assets/sets/garage_new.svg", "priority": "P1", "status": "planned"},
+    {"id": "yard_drainfield", "path": "assets/sets/yard_drainfield.svg", "priority": "P0", "status": "planned"}
+  ],
+  "diagrams": [
+    {"id": "diagram_tank", "path": "assets/diagrams/diagram_tank.svg", "priority": "P0", "status": "skeleton"},
+    {"id": "diagram_drainfield", "path": "assets/diagrams/diagram_drainfield.svg", "priority": "P1", "status": "planned"},
+    {"id": "diagram_healthy_system", "path": "assets/diagrams/diagram_healthy_system.svg", "priority": "P1", "status": "planned"}
+  ],
+  "props": [
+    {"id": "glow_grass_rect", "path": "assets/props/glow_grass_rect.svg", "priority": "P0", "status": "skeleton"},
+    {"id": "clipboard", "path": "assets/props/clipboard.svg", "priority": "P1", "status": "planned"},
+    {"id": "sink_disposal", "path": "assets/props/sink_disposal.svg", "priority": "P1", "status": "planned"},
+    {"id": "toilet", "path": "assets/props/toilet.svg", "priority": "P1", "status": "planned"},
+    {"id": "caustic_bottle", "path": "assets/props/caustic_bottle.svg", "priority": "P1", "status": "planned"},
+    {"id": "diaper_prop", "path": "assets/props/diaper_prop.svg", "priority": "P1", "status": "planned"}
+  ],
+  "graphics": [
+    {"id": "title_card", "path": "assets/graphics/title_card.svg", "priority": "P0", "status": "planned"},
+    {"id": "end_card", "path": "assets/graphics/end_card.svg", "priority": "P1", "status": "planned"},
+    {"id": "company_logo", "path": "assets/graphics/company_logo.svg", "priority": "P0", "status": "planned"}
+  ]
+}
