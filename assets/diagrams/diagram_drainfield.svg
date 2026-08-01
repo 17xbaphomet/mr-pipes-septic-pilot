@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f0f7f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c5f2d">Drainfield / Leach Field</text>
+  
+  <!-- Ground surface -->
+  <rect x="50" y="80" width="700" height="30" fill="#8bc34a"/>
+  <text x="400" y="100" text-anchor="middle" font-family="Arial" font-size="12" fill="#1b5e20">Grass / Soil Surface</text>
+  
+  <!-- Soil layers -->
+  <rect x="50" y="110" width="700" height="50" fill="#c8a882"/>
+  <text x="60" y="140" font-family="Arial" font-size="11" fill="#5d4037">Topsoil</text>
+  
+  <rect x="50" y="160" width="700" height="80" fill="#a1887f"/>
+  <text x="60" y="205" font-family="Arial" font-size="11" fill="#4e342e">Absorption soil</text>
+  
+  <!-- Gravel / trench bed -->
+  <rect x="80" y="200" width="640" height="60" fill="#9e9e9e" rx="4"/>
+  <text x="400" y="235" text-anchor="middle" font-family="Arial" font-size="12" fill="#212121">Gravel / Aggregate Bed</text>
+  
+  <!-- Perforated pipes -->
+  <rect x="100" y="215" width="600" height="12" fill="#37474f" rx="6"/>
+  <circle cx="150" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="220" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="290" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="360" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="430" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="500" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="570" cy="221" r="3" fill="#90a4ae"/>
+  <circle cx="640" cy="221" r="3" fill="#90a4ae"/>
+  
+  <text x="400" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#37474f">Perforated Distribution Pipe</text>
+  
+  <!-- Effluent arrows -->
+  <path d="M180 245 L180 280" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M320 245 L320 280" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M460 245 L460 280" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M600 245 L600 280" stroke="#0288d1" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Soil treatment zone -->
+  <rect x="50" y="280" width="700" height="70" fill="#d7ccc8"/>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial" font-size="13" fill="#4e342e">Soil Treatment Zone (bacteria clean the wastewater)</text>
+  
+  <!-- Deep soil -->
+  <rect x="50" y="350" width="700" height="50" fill="#8d6e63"/>
+  <text x="400" y="380" text-anchor="middle" font-family="Arial" font-size="12" fill="#3e2723">Deeper soil / groundwater protection</text>
+  
+  <!-- Warning note -->
+  <rect x="50" y="410" width="700" height="30" fill="#fff3e0" stroke="#ef6c00" stroke-width="1.5"/>
+  <text x="400" y="430" text-anchor="middle" font-family="Arial" font-size="12" fill="#e65100">Never drive, build, or plant deep-rooted trees on the drainfield</text>
+  
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0288d1"/>
+    </marker>
+  </defs>
+</svg>
