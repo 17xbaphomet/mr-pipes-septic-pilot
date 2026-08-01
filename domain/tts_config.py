@@ -1,7 +1,18 @@
-"""espeak-ng TTS engine for Mr. Pipes pilot.
+"""TTS engine for Mr. Pipes pilot (espeak-ng + optional Qwen3 VoiceDesign).
 
-Per-character profiles, multi-speaker line synth, ffmpeg concat,
-duration fit, text-hash cache.
+Features:
+  - Backends: espeak-ng (default) | Qwen3-TTS-12Hz-1.7B-VoiceDesign
+  - Per-character VoiceProfile (espeak) / INSTRUCTS (qwen)
+  - Per-line synthesis for multi-speaker segments
+  - ffmpeg concat + silence gaps between lines
+  - Pad/trim to target segment duration
+  - Text-hash cache (.meta.json) so unchanged dialogue is not re-synthesized
+
+Env:
+  TTS_BACKEND=espeak|qwen   (default: espeak)
+  ESPEAK_BIN, QWEN_TTS_MODEL, QWEN_TTS_DEVICE, QWEN_TTS_DTYPE
+
+Used by tools/build_pilot.py → artifacts/audio/{seg_id}.wav → Rhubarb → mux.
 """
 from __future__ import annotations
 
@@ -16,8 +27,14 @@ from pathlib import Path
 from typing import Sequence
 
 
+def tts_backend() -> str:
+    """Active TTS backend: 'espeak' (default) or 'qwen'."""
+    return (os.environ.get("TTS_BACKEND") or "espeak").strip().lower()
+
+
 @dataclass(frozen=True)
 class VoiceProfile:
+    """Per-character / role speaking style for espeak-ng."""
     voice: str = "en-us"
     speed_wpm: int = 140
     pitch: int = 40
@@ -59,7 +76,10 @@ def profile_for(speaker: str | None = None, segment_type: str | None = None) -> 
 
 
 def _text_hash(text: str, profile: VoiceProfile) -> str:
-    payload = text.strip() + "|" + json.dumps(asdict(profile), sort_keys=True)
+    payload = (
+        tts_backend() + "|" + text.strip() + "|"
+        + json.dumps(asdict(profile), sort_keys=True)
+    )
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
 
 
@@ -83,21 +103,41 @@ def wav_duration_s(path: Path) -> float:
 
 
 def synthesize(
-    text: str, wav_path: Path, *,
-    speaker: str | None = None, segment_type: str | None = None,
+    text: str,
+    wav_path: Path,
+    *,
+    speaker: str | None = None,
+    segment_type: str | None = None,
     profile: VoiceProfile | None = None,
 ) -> bool:
+    """Write mono WAV via active backend (espeak or qwen). Returns True on success."""
     text = (text or "").strip()
     if not text:
         return False
+    wav_path = Path(wav_path)
+    wav_path.parent.mkdir(parents=True, exist_ok=True)
+
+    if tts_backend() == "qwen":
+        try:
+            from domain.tts_qwen import synthesize_qwen
+            return synthesize_qwen(text, wav_path, speaker=speaker)
+        except Exception as e:
+            print(f"  qwen backend error, falling back to espeak: {e}")
+
     bin_path = espeak_bin()
     if not bin_path:
         return False
     p = profile or profile_for(speaker, segment_type)
-    wav_path = Path(wav_path)
-    wav_path.parent.mkdir(parents=True, exist_ok=True)
-    cmd = [bin_path, "-v", p.voice, "-s", str(p.speed_wpm), "-p", str(p.pitch),
-           "-a", str(p.amplitude), "-g", str(p.gap_ms), "-w", str(wav_path), text]
+    cmd = [
+        bin_path,
+        "-v", p.voice,
+        "-s", str(p.speed_wpm),
+        "-p", str(p.pitch),
+        "-a", str(p.amplitude),
+        "-g", str(p.gap_ms),
+        "-w", str(wav_path),
+        text,
+    ]
     try:
         subprocess.run(cmd, check=True, capture_output=True, text=True)
         return wav_path.is_file() and wav_path.stat().st_size > 44
@@ -177,17 +217,33 @@ def fit_duration(wav_path: Path, target_s: float, *, max_stretch: float = 1.15) 
 
 
 def synthesize_segment_lines(
-    lines: Sequence[tuple[str, str]], out_wav: Path, *,
-    segment_type: str | None = None, target_duration_s: float | None = None,
-    force: bool = False, work_dir: Path | None = None,
+    lines: Sequence[tuple[str, str]],
+    out_wav: Path,
+    *,
+    segment_type: str | None = None,
+    target_duration_s: float | None = None,
+    force: bool = False,
+    work_dir: Path | None = None,
 ) -> Path | None:
     lines = [(s, t.strip()) for s, t in lines if (t or "").strip()]
-    if not lines or not espeak_available():
+    if not lines:
         return None
+    backend = tts_backend()
+    if backend == "qwen":
+        try:
+            from domain.tts_qwen import qwen_available
+            if not qwen_available():
+                return None
+        except Exception:
+            return None
+    elif not espeak_available():
+        return None
+
     out_wav = Path(out_wav)
     work = Path(work_dir) if work_dir else out_wav.parent
     work.mkdir(parents=True, exist_ok=True)
     meta_path = out_wav.with_suffix(".meta.json")
+
     blob = []
     for sp, tx in lines:
         p = profile_for(sp, segment_type)
@@ -200,6 +256,7 @@ def synthesize_segment_lines(
                 return out_wav
         except Exception:
             pass
+
     part_paths: list[Path] = []
     for i, (sp, tx) in enumerate(lines):
         part = work / f"{out_wav.stem}_line{i:02d}_{sp}.wav"
@@ -207,17 +264,22 @@ def synthesize_segment_lines(
             part_paths.append(part)
     if not part_paths:
         return None
+
     gap = profile_for(lines[0][0], segment_type).line_pause_ms
     if not concat_wavs(part_paths, out_wav, gap_ms=gap):
         shutil.copy(part_paths[0], out_wav)
     for p in part_paths:
         p.unlink(missing_ok=True)
+
     if target_duration_s and target_duration_s > 0:
         fit_duration(out_wav, target_duration_s)
+
     meta = {
-        "cache_key": cache_key, "lines": blob,
+        "cache_key": cache_key,
+        "lines": blob,
         "duration_s": wav_duration_s(out_wav),
-        "target_duration_s": target_duration_s, "engine": espeak_bin(),
+        "target_duration_s": target_duration_s,
+        "engine": (espeak_bin() if tts_backend() != "qwen" else "qwen-VoiceDesign"),
     }
     meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
     return out_wav if out_wav.is_file() else None
