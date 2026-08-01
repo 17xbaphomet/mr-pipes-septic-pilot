@@ -1,62 +1,47 @@
-# Rhubarb Lip Sync
+# Rhubarb Lip Sync + espeak-ng
+
+Pipeline: **Text → espeak-ng WAV → Rhubarb mouth cues → MiniPlayer**
 
 ## Install
 
 ```bash
-# project helper (downloads v1.14.0 Linux if needed)
+sudo apt-get install -y espeak-ng
 bash tools/setup_rhubarb.sh
-
-# or use already installed system binary
 source .env.rhubarb
-rhubarb --version   # → Rhubarb Lip Sync version 1.14.0
+rhubarb --version
+espeak-ng --version
 ```
-
-Binary location (this environment):
 
 | Path | Role |
 |------|------|
-| `/opt/rhubarb/rhubarb` | Executable (workdir is noexec) |
-| `/opt/rhubarb/res/` | Acoustic models (required) |
-| `/usr/local/bin/rhubarb` | Symlink on PATH |
-| `tools/rhubarb/` | Project copy of binary + res |
+| `/usr/bin/espeak-ng` | TTS |
+| `/opt/rhubarb/rhubarb` | Lip-sync CLI |
+| `/opt/rhubarb/res/` | Acoustic models |
 
-Override: `export RHUBARB_BIN=/path/to/rhubarb`
+Override: `export ESPEAK_BIN=...` / `export RHUBARB_BIN=...`
 
-## CLI usage
+## Voice profiles (`domain/tts_config.py`)
+
+| Role | Voice | Speed | Pitch |
+|------|-------|-------|-------|
+| mr_pipes / host | en-us | 138 | 38 |
+| education | en-us | 132 | 40 |
+| dad | en-us | 145 | 35 |
+| mom | en-us+f3 | 145 | 55 |
+| teen | en-us | 155 | 48 |
+
+## Full pilot build
 
 ```bash
-rhubarb -f json -o out.rhubarb.json --dialogFile dialog.txt audio.wav
+python tools/build_pilot.py --segment introduction --fps 8 --force-tts --force-rhubarb
+python tools/build_pilot.py --preview --fps 6
+python tools/build_pilot.py --all --fps 8
 ```
 
-Helper:
+Outputs: `artifacts/audio/{seg}.wav`, `{seg}.rhubarb.json`, `segments/{seg}.mp4`, `pilot_full.mp4`, `pilot_script.txt`
 
-```bash
-python tools/run_rhubarb.py --check
-python tools/run_rhubarb.py artifacts/audio/intro_mr_pipes.wav \
-  --dialog-file artifacts/audio/intro_mr_pipes.dialog.txt
-```
+## Fallback
 
-## Python API
-
-```python
-from domain.lipsync import cues_from_rhubarb, sample_viseme_at
-from pathlib import Path
-
-cues = cues_from_rhubarb(
-    Path("artifacts/audio/intro_mr_pipes.wav"),
-    transcript="I'm Mr. Pipes...",
-)
-viseme, intensity = sample_viseme_at(cues, t=1.5)
-```
-
-Fallback order in `extract_visemes()`:
-
-1. Rhubarb (if binary + audio)
-2. Energy-based from WAV
-3. Text-driven grapheme heuristics
-
-## Test assets
-
-- `artifacts/audio/intro_mr_pipes.wav` — espeak-ng TTS for intro line
-- `artifacts/audio/intro_mr_pipes.dialog.txt`
-- `artifacts/audio/intro_mr_pipes.rhubarb.json` — 35 mouth cues, ~10.4s
+1. Rhubarb (WAV + binary)
+2. Text grapheme heuristics
+3. Closed mouth (X)
