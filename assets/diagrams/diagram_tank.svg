@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <rect width="800" height="480" fill="#FAFAFA"/>
+  <rect x="40" y="80" width="720" height="360" fill="#D7CCC8"/>
+  <g id="tank_outline">
+    <rect x="120" y="100" width="560" height="300" rx="8" fill="#ECEFF1" stroke="#546E7A" stroke-width="6"/>
+    <rect x="100" y="88" width="600" height="20" fill="#8D6E63"/>
+    <text x="400" y="70" text-anchor="middle" font-size="18" fill="#37474F" font-weight="bold">Septic Tank (cross-section)</text>
+  </g>
+  <g id="scum"><rect x="130" y="120" width="460" height="50" fill="#A1887F" opacity="0.85"/></g>
+  <g id="clear_zone"><rect x="130" y="170" width="460" height="120" fill="#BBDEFB" opacity="0.75"/></g>
+  <g id="sludge"><g id="sludge_level"><rect x="130" y="290" width="460" height="100" fill="#5D4037" opacity="0.9"/></g></g>
+</svg>
