@@ -1,29 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="280" height="480" viewBox="0 0 280 480">
-  <g id="body">
-    <ellipse cx="110" cy="448" rx="26" ry="10" fill="#4E342E"/>
-    <ellipse cx="170" cy="448" rx="26" ry="10" fill="#4E342E"/>
-    <rect x="100" y="300" width="30" height="150" rx="8" fill="#5D4037"/>
-    <rect x="150" y="300" width="30" height="150" rx="8" fill="#5D4037"/>
-    <path d="M78,175 L202,175 L220,320 L60,320 Z" fill="#7B1FA2"/>
-    <rect x="90" y="175" width="100" height="50" rx="8" fill="#9C27B0"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="500" viewBox="0 0 280 500">
+  <!-- Mom - modern but respectable, practical dress -->
+  <ellipse cx="140" cy="488" rx="50" ry="10" fill="#00000022"/>
+  
+  <!-- Legs -->
+  <rect x="105" y="320" width="30" height="150" rx="8" fill="#5D4037"/>
+  <rect x="145" y="320" width="30" height="150" rx="8" fill="#5D4037"/>
+  <!-- Shoes -->
+  <ellipse cx="120" cy="475" rx="22" ry="12" fill="#3E2723"/>
+  <ellipse cx="160" cy="475" rx="22" ry="12" fill="#3E2723"/>
+  
+  <!-- Dress -->
+  <path d="M70 180 Q70 340 90 360 L190 360 Q210 340 210 180 Z" fill="#7B1FA2"/>
+  <rect x="85" y="170" width="110" height="40" rx="12" fill="#9C27B0"/>
+  
+  <!-- Arms -->
   <g id="arm_l">
-    <rect x="50" y="185" width="28" height="100" rx="12" fill="#9C27B0"/>
-    <circle cx="64" cy="290" r="15" fill="#FFCC80"/>
+    <rect x="45" y="185" width="35" height="110" rx="14" fill="#FFE0B2"/>
+    <circle cx="62" cy="300" r="16" fill="#FFCC80"/>
   </g>
   <g id="arm_r">
-    <rect x="202" y="185" width="28" height="100" rx="12" fill="#9C27B0"/>
-    <circle cx="216" cy="290" r="15" fill="#FFCC80"/>
+    <rect x="200" y="185" width="35" height="110" rx="14" fill="#FFE0B2"/>
+    <circle cx="218" cy="300" r="16" fill="#FFCC80"/>
   </g>
+  
+  <!-- Neck -->
+  <rect x="120" y="150" width="40" height="28" fill="#FFCC80"/>
+  
+  <!-- Head -->
   <g id="head">
-    <rect x="122" y="148" width="36" height="28" fill="#FFCC80"/>
-    <ellipse cx="140" cy="108" rx="54" ry="56" fill="#FFE0B2"/>
-    <path d="M88,100 Q90,48 140,45 Q190,48 192,100 Q185,130 140,125 Q95,130 88,100" fill="#4E342E"/>
-    <ellipse cx="118" cy="102" rx="7" ry="9" fill="#263238"/>
-    <ellipse cx="162" cy="102" rx="7" ry="9" fill="#263238"/>
-    <path d="M140,110 L135,122 L145,122" fill="none" stroke="#E0A060" stroke-width="3"/>
+    <ellipse cx="140" cy="105" rx="55" ry="60" fill="#FFE0B2"/>
+    <!-- Hair -->
+    <path d="M85 100 Q90 40 140 35 Q190 40 195 100" fill="#5D4037"/>
+    <path d="M90 105 Q100 55 140 50 Q180 55 190 105" fill="#6D4C41"/>
+    <!-- Eyes -->
+    <ellipse cx="120" cy="100" rx="8" ry="10" fill="#263238"/>
+    <ellipse cx="160" cy="100" rx="8" ry="10" fill="#263238"/>
+    <!-- Soft smile -->
+    <path d="M122 140 Q140 155 158 140" fill="none" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
   </g>
+  
   <g id="mouth">
-    <ellipse cx="140" cy="145" rx="14" ry="5" fill="#5D4037"/>
+    <ellipse cx="140" cy="145" rx="14" ry="5" fill="#5D4037" opacity="0.3"/>
   </g>
 </svg>

@@ -1,21 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="280" height="480" viewBox="0 0 280 480">
-  <g id="body">
-    <ellipse cx="110" cy="448" rx="28" ry="10" fill="#37474F"/>
-    <ellipse cx="170" cy="448" rx="28" ry="10" fill="#37474F"/>
-    <rect x="92" y="320" width="36" height="130" rx="8" fill="#455A64"/>
-    <rect x="152" y="320" width="36" height="130" rx="8" fill="#455A64"/>
-    <rect x="78" y="175" width="124" height="150" rx="16" fill="#1565C0"/>
-    <rect x="78" y="310" width="124" height="14" fill="#5D4037"/>
-    <rect x="150" y="220" width="36" height="32" rx="4" fill="#0D47A1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="520" viewBox="0 0 300 520">
+  <!-- Mr. Pipes - friendly middle-aged septic expert, Southwest style -->
+  <defs>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="505" rx="55" ry="12" fill="#00000022"/>
+  
+  <!-- Legs / Pants -->
+  <rect x="105" y="340" width="38" height="155" rx="10" fill="#37474F"/>
+  <rect x="157" y="340" width="38" height="155" rx="10" fill="#37474F"/>
+  <!-- Boots -->
+  <rect x="98" y="480" width="50" height="22" rx="6" fill="#3E2723"/>
+  <rect x="152" y="480" width="50" height="22" rx="6" fill="#3E2723"/>
+  
+  <!-- Body / Work shirt -->
+  <rect x="85" y="190" width="130" height="160" rx="18" fill="url(#shirtGrad)"/>
+  <!-- Collar -->
+  <path d="M100 195 L150 215 L200 195" fill="none" stroke="#0D47A1" stroke-width="6"/>
+  <!-- Pocket -->
+  <rect x="165" y="230" width="35" height="28" rx="4" fill="#0D47A1"/>
+  <!-- Belt -->
+  <rect x="85" y="335" width="130" height="14" fill="#5D4037"/>
+  <rect x="140" y="332" width="20" height="20" rx="3" fill="#FFB300"/>
+  
+  <!-- Arms -->
+  <g id="arm_l">
+    <rect x="45" y="200" width="42" height="120" rx="16" fill="#1976D2"/>
+    <circle cx="66" cy="325" r="18" fill="#FFCC80"/>
   </g>
-  <g id="arm_l"><rect x="48" y="185" width="32" height="110" rx="12" fill="#1565C0"/><circle cx="64" cy="300" r="16" fill="#FFCC80"/></g>
-  <g id="arm_r"><rect x="200" y="185" width="32" height="110" rx="12" fill="#1565C0"/><circle cx="216" cy="300" r="16" fill="#FFCC80"/></g>
+  <g id="arm_r">
+    <rect x="213" y="200" width="42" height="120" rx="16" fill="#1976D2"/>
+    <circle cx="234" cy="325" r="18" fill="#FFCC80"/>
+  </g>
+  
+  <!-- Neck -->
+  <rect x="130" y="165" width="40" height="30" fill="#FFCC80"/>
+  
+  <!-- Head -->
   <g id="head">
-    <rect x="122" y="150" width="36" height="30" fill="#FFCC80"/>
-    <ellipse cx="140" cy="110" rx="58" ry="62" fill="#FFE0B2"/>
-    <path d="M85,100 Q90,55 140,50 Q190,55 195,100" fill="#5D4037"/>
-    <ellipse cx="118" cy="105" rx="8" ry="10" fill="#263238"/>
-    <ellipse cx="162" cy="105" rx="8" ry="10" fill="#263238"/>
+    <ellipse cx="150" cy="115" rx="62" ry="68" fill="#FFE0B2"/>
+    <!-- Hair -->
+    <path d="M90 95 Q95 45 150 40 Q205 45 210 95" fill="#5D4037"/>
+    <path d="M95 100 Q100 70 150 65 Q200 70 205 100" fill="#6D4C41"/>
+    <!-- Eyes -->
+    <ellipse cx="128" cy="110" rx="9" ry="11" fill="#263238"/>
+    <ellipse cx="172" cy="110" rx="9" ry="11" fill="#263238"/>
+    <circle cx="130" cy="107" r="3" fill="#FFFFFF"/>
+    <circle cx="174" cy="107" r="3" fill="#FFFFFF"/>
+    <!-- Eyebrows -->
+    <path d="M115 95 Q128 90 140 95" fill="none" stroke="#5D4037" stroke-width="3"/>
+    <path d="M160 95 Q172 90 185 95" fill="none" stroke="#5D4037" stroke-width="3"/>
+    <!-- Nose -->
+    <path d="M150 115 L145 135 L155 135" fill="none" stroke="#E0A060" stroke-width="3"/>
+    <!-- Friendly smile -->
+    <path d="M130 150 Q150 168 170 150" fill="none" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/>
   </g>
-  <g id="mouth"><ellipse cx="140" cy="148" rx="16" ry="6" fill="#5D4037"/></g>
+  
+  <!-- Mouth group for lip-sync -->
+  <g id="mouth">
+    <ellipse cx="150" cy="155" rx="18" ry="7" fill="#5D4037" opacity="0.3"/>
+  </g>
 </svg>
