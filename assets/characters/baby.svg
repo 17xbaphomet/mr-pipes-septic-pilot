@@ -1,37 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="280" viewBox="0 0 200 280">
-  <!-- Baby -->
-  <ellipse cx="100" cy="268" rx="40" ry="8" fill="#00000022"/>
-  
-  <!-- Body / Onesie -->
-  <ellipse cx="100" cy="180" rx="55" ry="65" fill="#FFCC80"/>
-  <ellipse cx="100" cy="190" rx="50" ry="55" fill="#81D4FA"/>
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="320" viewBox="0 0 220 320">
+  <!-- Baby - unified soft style -->
+  <ellipse cx="110" cy="305" rx="40" ry="10" fill="#00000022"/>
+  <!-- Body / onesie -->
+  <ellipse cx="110" cy="210" rx="55" ry="70" fill="#81D4FA"/>
   <!-- Arms -->
-  <circle cx="45" cy="170" r="18" fill="#FFCC80"/>
-  <circle cx="155" cy="170" r="18" fill="#FFCC80"/>
-  
+  <ellipse cx="55" cy="190" rx="18" ry="30" fill="#81D4FA"/>
+  <ellipse cx="165" cy="190" rx="18" ry="30" fill="#81D4FA"/>
   <!-- Legs -->
-  <ellipse cx="75" cy="240" rx="18" ry="25" fill="#81D4FA"/>
-  <ellipse cx="125" cy="240" rx="18" ry="25" fill="#81D4FA"/>
-  
-  <!-- Head -->
-  <g id="head">
-    <circle cx="100" cy="90" r="55" fill="#FFE0B2"/>
-    <!-- Sparse hair -->
-    <path d="M70 55 Q100 35 130 55" fill="none" stroke="#F9A825" stroke-width="6"/>
-    <!-- Eyes -->
-    <circle cx="82" cy="85" r="8" fill="#263238"/>
-    <circle cx="118" cy="85" r="8" fill="#263238"/>
-    <circle cx="84" cy="82" r="3" fill="#FFFFFF"/>
-    <circle cx="120" cy="82" r="3" fill="#FFFFFF"/>
-    <!-- Cheeks -->
-    <circle cx="70" cy="105" r="10" fill="#FFAB91" opacity="0.6"/>
-    <circle cx="130" cy="105" r="10" fill="#FFAB91" opacity="0.6"/>
-    <!-- Smile -->
-    <path d="M85 115 Q100 128 115 115" fill="none" stroke="#5D4037" stroke-width="3"/>
-  </g>
-  
-  <g id="mouth">
-    <ellipse cx="100" cy="120" rx="10" ry="5" fill="#5D4037" opacity="0.3"/>
-  </g>
+  <ellipse cx="85" cy="270" rx="18" ry="30" fill="#81D4FA"/>
+  <ellipse cx="135" cy="270" rx="18" ry="30" fill="#81D4FA"/>
+  <!-- Head (big, round) -->
+  <ellipse cx="110" cy="100" rx="55" ry="58" fill="#FFE0B2"/>
+  <!-- Hair tuft -->
+  <path d="M90 55 Q110 35 130 55" fill="#FFCC80"/>
+  <!-- Face -->
+  <ellipse cx="92" cy="95" rx="6" ry="8" fill="#263238"/>
+  <ellipse cx="128" cy="95" rx="6" ry="8" fill="#263238"/>
+  <circle cx="94" cy="92" r="1.8" fill="#FFFFFF"/>
+  <circle cx="130" cy="92" r="1.8" fill="#FFFFFF"/>
+  <!-- Soft smile -->
+  <path d="M92 120 Q110 135 128 120" fill="none" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cheeks -->
+  <circle cx="75" cy="110" r="10" fill="#FFAB91" opacity="0.5"/>
+  <circle cx="145" cy="110" r="10" fill="#FFAB91" opacity="0.5"/>
 </svg>
