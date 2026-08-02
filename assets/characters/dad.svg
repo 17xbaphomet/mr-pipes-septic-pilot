@@ -1,55 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="520" viewBox="0 0 300 520">
-  <!-- Dad / Homeowner - broad, proud, cowboy hat, flannel -->
-  <ellipse cx="150" cy="505" rx="60" ry="12" fill="#00000022"/>
+  <!-- Dad - final unified soft style matching Mr. Pipes V2 -->
+  <ellipse cx="150" cy="505" rx="55" ry="10" fill="#00000018"/>
   
   <!-- Legs / Jeans -->
-  <rect x="100" y="330" width="42" height="160" rx="10" fill="#1565C0"/>
-  <rect x="158" y="330" width="42" height="160" rx="10" fill="#1565C0"/>
+  <rect x="100" y="330" width="38" height="155" rx="9" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
+  <rect x="162" y="330" width="38" height="155" rx="9" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
   <!-- Boots -->
-  <rect x="92" y="475" width="55" height="25" rx="6" fill="#3E2723"/>
-  <rect x="153" y="475" width="55" height="25" rx="6" fill="#3E2723"/>
+  <rect x="92" y="475" width="52" height="25" rx="5" fill="#3E2723" stroke="#2E1B10" stroke-width="2"/>
+  <rect x="156" y="475" width="52" height="25" rx="5" fill="#3E2723" stroke="#2E1B10" stroke-width="2"/>
   
   <!-- Body / Red Flannel -->
-  <rect x="80" y="175" width="140" height="165" rx="16" fill="#C62828"/>
-  <!-- Flannel lines -->
-  <line x1="100" y1="185" x2="100" y2="330" stroke="#B71C1C" stroke-width="5"/>
-  <line x1="130" y1="185" x2="130" y2="330" stroke="#B71C1C" stroke-width="5"/>
-  <line x1="160" y1="185" x2="160" y2="330" stroke="#B71C1C" stroke-width="5"/>
-  <line x1="190" y1="185" x2="190" y2="330" stroke="#B71C1C" stroke-width="5"/>
+  <rect x="82" y="180" width="136" height="160" rx="14" fill="#C62828" stroke="#B71C1C" stroke-width="2.5"/>
+  <!-- Soft flannel lines -->
+  <line x1="105" y1="190" x2="105" y2="325" stroke="#B71C1C" stroke-width="4"/>
+  <line x1="135" y1="190" x2="135" y2="325" stroke="#B71C1C" stroke-width="4"/>
+  <line x1="165" y1="190" x2="165" y2="325" stroke="#B71C1C" stroke-width="4"/>
+  <line x1="195" y1="190" x2="195" y2="325" stroke="#B71C1C" stroke-width="4"/>
   <!-- Belt -->
-  <rect x="80" y="325" width="140" height="16" fill="#5D4037"/>
+  <rect x="82" y="325" width="136" height="14" fill="#5D4037" stroke="#4E342E" stroke-width="1.5"/>
   
   <!-- Arms -->
-  <g id="arm_l">
-    <rect x="40" y="185" width="45" height="125" rx="16" fill="#C62828"/>
-    <circle cx="62" cy="315" r="19" fill="#FFCC80"/>
-  </g>
-  <g id="arm_r">
-    <rect x="215" y="185" width="45" height="125" rx="16" fill="#C62828"/>
-    <circle cx="238" cy="315" r="19" fill="#FFCC80"/>
-  </g>
+  <rect x="42" y="190" width="42" height="115" rx="14" fill="#C62828" stroke="#B71C1C" stroke-width="2"/>
+  <circle cx="63" cy="310" r="17" fill="#FFCC80" stroke="#E0A060" stroke-width="2"/>
+  <rect x="216" y="190" width="42" height="115" rx="14" fill="#C62828" stroke="#B71C1C" stroke-width="2"/>
+  <circle cx="237" cy="310" r="17" fill="#FFCC80" stroke="#E0A060" stroke-width="2"/>
   
   <!-- Neck -->
-  <rect x="128" y="155" width="44" height="28" fill="#FFCC80"/>
+  <rect x="125" y="155" width="50" height="28" fill="#FFCC80" stroke="#E0A060" stroke-width="1.5"/>
   
-  <!-- Head -->
+  <!-- Head - matching Mr. Pipes construction -->
   <g id="head">
-    <ellipse cx="150" cy="110" rx="60" ry="65" fill="#FFE0B2"/>
+    <ellipse cx="150" cy="105" rx="55" ry="58" fill="#FFE0B2" stroke="#E0A060" stroke-width="2.5"/>
     <!-- Blonde hair -->
-    <path d="M92 95 Q100 40 150 35 Q200 40 208 95" fill="#F9A825"/>
-    <path d="M100 100 Q110 60 150 55 Q190 60 200 100" fill="#FBC02D"/>
-    <!-- Cowboy hat -->
-    <ellipse cx="150" cy="55" rx="85" ry="18" fill="#6D4C41"/>
-    <rect x="95" y="25" width="110" height="35" rx="8" fill="#5D4037"/>
-    <ellipse cx="150" cy="28" rx="55" ry="12" fill="#6D4C41"/>
-    <!-- Eyes -->
-    <ellipse cx="128" cy="105" rx="9" ry="11" fill="#263238"/>
-    <ellipse cx="172" cy="105" rx="9" ry="11" fill="#263238"/>
-    <!-- Confident smile -->
-    <path d="M128 145 Q150 162 172 145" fill="none" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/>
+    <path d="M95 85 Q100 40 150 35 Q200 40 205 85" fill="#F9A825" stroke="#F57F17" stroke-width="2"/>
+    <!-- Eyes - same style as Mr. Pipes -->
+    <ellipse cx="130" cy="100" rx="7" ry="9" fill="#263238"/>
+    <ellipse cx="170" cy="100" rx="7" ry="9" fill="#263238"/>
+    <circle cx="132" cy="97" r="2.5" fill="#fff"/>
+    <circle cx="172" cy="97" r="2.5" fill="#fff"/>
+    <!-- Soft brows -->
+    <path d="M118 88 Q130 84 140 88" fill="none" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M160 88 Q170 84 182 88" fill="none" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Reduced nose -->
+    <path d="M150 108 L146 125 L154 125" fill="none" stroke="#E0A060" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Soft confident smile -->
+    <path d="M128 140 Q150 155 172 140" fill="none" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
   </g>
   
-  <g id="mouth">
-    <ellipse cx="150" cy="150" rx="16" ry="6" fill="#5D4037" opacity="0.3"/>
-  </g>
+  <!-- Cowboy hat (strong silhouette) -->
+  <ellipse cx="150" cy="48" rx="80" ry="16" fill="#6D4C41" stroke="#5D4037" stroke-width="2"/>
+  <rect x="100" y="22" width="100" height="30" rx="6" fill="#5D4037" stroke="#4E342E" stroke-width="2"/>
+  <ellipse cx="150" cy="25" rx="50" ry="10" fill="#6D4C41"/>
+  
+  <g id="mouth"></g>
 </svg>
