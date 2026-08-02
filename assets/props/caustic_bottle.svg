@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="200" viewBox="0 0 120 200">
+  <!-- Bottle body -->
+  <rect x="30" y="50" width="60" height="120" rx="8" fill="#FFEB3B" stroke="#F57F17" stroke-width="3"/>
+  <!-- Neck -->
+  <rect x="45" y="30" width="30" height="25" rx="4" fill="#FFEB3B" stroke="#F57F17" stroke-width="2"/>
+  <!-- Cap -->
+  <rect x="42" y="15" width="36" height="20" rx="4" fill="#E65100"/>
+  <!-- Label -->
+  <rect x="35" y="70" width="50" height="55" rx="4" fill="#FFF8E1" stroke="#E65100" stroke-width="1.5"/>
+  <!-- Warning symbol -->
+  <polygon points="60,80 50,100 70,100" fill="#D32F2F"/>
+  <text x="60" y="96" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">!</text>
+  <!-- Text -->
+  <text x="60" y="115" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#BF360C">CAUSTIC</text>
+  <text x="60" y="128" text-anchor="middle" font-family="Arial" font-size="8" fill="#BF360C">DRAIN</text>
+</svg>
