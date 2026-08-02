@@ -1,43 +1,49 @@
-# Mr. Pipes — Septic System Pilot
+# Mr. Pipes Septic Pilot
 
-~14:30 educational cartoon: family story + technical cutaways (same engine family as vector-toon-pipeline).
+Educational cartoon pilot video for the Southwest US market about common septic system mistakes.
 
-## Layout
+## Final Character Cast (unified soft cartoon style)
 
-```
-content/timeline.json      # full pilot timeline (15 segments)
-content/assets_manifest.json
-domain/scene_schema.py     # typed Timeline / Segment loader
-domain/lipsync.py          # Preston Blair visemes, text/energy/Rhubarb
-domain/rhubarb_config.py
-application/mini_player.py # segment renderer (SVG + subtitles + mouth)
-assets/characters/         # mr_pipes, dad
-assets/sets/               # workshop, house_exterior_day
-assets/diagrams/           # septic tank cross-section
-tools/setup_rhubarb.sh     # install Rhubarb Lip Sync 1.14.0
-tools/run_rhubarb.py
-docs/RHUBARB.md
-```
+- **Mr. Pipes** – Orange high-vis work suit, hard hat with headlamp, friendly expert
+- **Dad** – Cowboy hat, flannel shirt, proud homeowner
+- **Mom** – Modest dress, warm practical mother
+- **Teen daughter** – Long hair, casual outfit
+- **Mid-child** – Big headphones, blue shirt
+- **Baby** – Soft onesie
 
-## Quick start
+## Quick Start – Full Generation with Audio
 
 ```bash
-# Rhubarb (optional, for production lip-sync)
-bash tools/setup_rhubarb.sh
-source .env.rhubarb
+# 1. Install dependencies
+pip install torch soundfile pydub qwen-tts
 
-# List timeline segments
-python3 -m application.mini_player --list
+# 2. Generate all audio tracks (Qwen3-TTS-12Hz-1.7B-VoiceDesign)
+python scripts/generate_full_audio_voice_design.py
 
-# Render intro stills
-python3 -m application.mini_player --segment introduction
-
-# MP4
-python3 -m application.mini_player --segment introduction --out artifacts/intro.mp4 --fps 8
+# 3. Or run the master pipeline
+python scripts/generate_full_pilot.py
 ```
 
-Requires: Python 3.11+, Pillow, cairosvg, ffmpeg. Rhubarb binary is **not** in git (download via setup script).
+Audio output will be written to `audio_output_voice_design/`.
 
-## License
+## Project Structure
 
-Project assets and code: private pilot content. Rhubarb Lip Sync is third-party (see its LICENSE).
+- `assets/characters/` – Final SVG characters
+- `assets/sets/` – Scene backgrounds
+- `assets/props/` – Interactive objects
+- `assets/diagrams/` – Educational graphics
+- `assets/graphics/` – Title / end cards
+- `content/timeline.json` – Full scene timing & dialogue
+- `scripts/generate_full_audio_voice_design.py` – Complete TTS pipeline
+- `scripts/generate_full_pilot.py` – Master generation entry point
+
+## Voice Design
+
+All voices use natural-language instructions optimized for a calm, trustworthy Southwest-US tone.
+
+## Status
+
+- Characters: **Final & approved**
+- Core sets & props: Present
+- Full dialogue script + TTS pipeline: Ready
+- Ready for scene assembly and final render
