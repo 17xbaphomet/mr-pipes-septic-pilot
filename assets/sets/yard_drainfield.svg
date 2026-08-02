@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#E8F5E9"/>
+  <!-- Grass -->
+  <rect y="200" width="800" height="250" fill="#81C784"/>
+  <!-- Drainfield pipes (subtle) -->
+  <g opacity="0.4">
+    <rect x="100" y="280" width="600" height="8" fill="#546E7A"/>
+    <rect x="100" y="310" width="600" height="8" fill="#546E7A"/>
+    <rect x="100" y="340" width="600" height="8" fill="#546E7A"/>
+  </g>
+  <!-- Trees far -->
+  <circle cx="80" cy="180" r="40" fill="#2E7D32"/>
+  <circle cx="720" cy="170" r="45" fill="#2E7D32"/>
+  <!-- Glowing problem area -->
+  <rect x="250" y="250" width="300" height="120" rx="10" fill="#69F0AE" opacity="0.7"/>
+</svg>

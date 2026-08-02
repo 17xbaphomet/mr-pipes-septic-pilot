@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#E3F2FD"/>
+  <!-- Floor -->
+  <rect y="380" width="800" height="120" fill="#B0BEC5"/>
+  <!-- Wall tiles -->
+  <rect y="0" width="800" height="380" fill="#ECEFF1"/>
+  <!-- Toilet -->
+  <g id="toilet">
+    <ellipse cx="220" cy="360" rx="55" ry="25" fill="#FFFFFF" stroke="#90A4AE" stroke-width="3"/>
+    <rect x="180" y="250" width="80" height="110" rx="12" fill="#FFFFFF" stroke="#90A4AE" stroke-width="3"/>
+    <ellipse cx="220" cy="250" rx="40" ry="15" fill="#ECEFF1"/>
+    <rect x="200" y="200" width="40" height="55" rx="6" fill="#FFFFFF" stroke="#90A4AE" stroke-width="2"/>
+  </g>
+  <!-- Sink -->
+  <rect x="450" y="220" width="180" height="30" rx="6" fill="#CFD8DC"/>
+  <ellipse cx="540" cy="250" rx="70" ry="25" fill="#FFFFFF" stroke="#90A4AE" stroke-width="3"/>
+  <rect x="520" y="180" width="40" height="45" fill="#B0BEC5"/>
+  <!-- Mirror -->
+  <rect x="470" y="60" width="140" height="100" rx="8" fill="#BBDEFB" stroke="#78909C" stroke-width="4"/>
+  <!-- Door -->
+  <rect x="680" y="80" width="90" height="300" fill="#8D6E63"/>
+  <circle cx="755" cy="230" r="8" fill="#FFB300"/>
+</svg>

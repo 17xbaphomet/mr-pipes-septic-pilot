@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#E8F5E9"/>
+  <!-- Sky -->
+  <rect width="800" height="200" fill="#BBDEFB"/>
+  <!-- Ground -->
+  <rect y="350" width="800" height="150" fill="#A5D6A7"/>
+  <!-- Garage building -->
+  <rect x="180" y="160" width="440" height="220" fill="#ECEFF1" stroke="#546E7A" stroke-width="4"/>
+  <!-- Roof -->
+  <polygon points="160,160 400,80 640,160" fill="#5D4037"/>
+  <!-- Door -->
+  <rect x="280" y="220" width="240" height="160" fill="#78909C"/>
+  <line x1="280" y1="300" x2="520" y2="300" stroke="#546E7A" stroke-width="3"/>
+  <line x1="400" y1="220" x2="400" y2="380" stroke="#546E7A" stroke-width="3"/>
+  <!-- Windows -->
+  <rect x="200" y="200" width="50" height="40" fill="#BBDEFB" stroke="#546E7A" stroke-width="2"/>
+  <rect x="550" y="200" width="50" height="40" fill="#BBDEFB" stroke="#546E7A" stroke-width="2"/>
+</svg>
